@@ -1,0 +1,8 @@
+<div class="container">
+    <ul class="collection with-header">
+        <li class="collection-header"><h4>Weighing List</h4></li>
+        <li *ngFor="let weighing of weighingList" class="collection-item">
+            <div>{{weighing.nomeExterno}}<a (click)=weighingDetail(weighing.id) class="secondary-content">Detail</a></div>
+        </li>        
+    </ul>
+</div>

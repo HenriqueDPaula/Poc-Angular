@@ -1,0 +1,36 @@
+<div class="container">
+
+    <p>Weighing id: {{weighing.id}}</p>
+    <p>Registro de pesagem válido: {{weighing.weighing_valid}}</p>
+
+    <!-- <button>Voltar</button> -->
+    <a  (click)="backToList()" class="waves-effect waves-light btn">Voltar</a>
+
+        <table class="collection-item">
+            <thead>
+                <tr>
+                    <th> Placa </th>
+                    <th> Nome Externo </th>
+                    <th> Faixa </th>
+                    <th> Pista </th>                
+                    <th> Velocidade </th>   
+                    <th> Número de eixos </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{weighing.placa}}</td>
+                    <td>{{weighing.nomeExterno}}</td>
+                    <td>{{weighing.faixa}}</td>
+                    <td>{{weighing.lane}}</td>
+                    <td>{{weighing.speed}}</td> 
+                    <td><i class="material-icons"><a (click)="navigateToAxleForm()" class="secondary-content">add</a></i></td>           
+                </tr>
+            </tbody>
+        </table>    
+
+        <app-weighing-axle [isAddAxle]="isAddAxle" 
+                            [id]="id" 
+                            *ngIf="isAddAxle">
+        </app-weighing-axle>
+</div>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { WeighingService } from './../../../service/weighing.service';
-import { WeighingModel } from 'src/app/model/weighing.model';
+import { WeighingService } from '../service/weighing.service';
+import { WeighingModel } from 'src/app/weighing/model/weighing.model';
 
 @Component({
   selector: 'app-weighing-detail',
@@ -11,7 +11,8 @@ import { WeighingModel } from 'src/app/model/weighing.model';
 })
 export class WeighingDetailComponent implements OnInit {
 
-  id: string;
+  isAddAxle: boolean
+  id: number;
   weighing: WeighingModel;  
 
   constructor(
@@ -21,7 +22,7 @@ export class WeighingDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');  
+    this.id = +this.route.snapshot.paramMap.get('id');  
     this.initWeighingDetail(this.id);    
   }
 
@@ -34,6 +35,11 @@ export class WeighingDetailComponent implements OnInit {
 
   backToList(){
     this.router.navigate(['/weighing'])
+  }
+
+  navigateToAxleForm(){
+    this.isAddAxle = true;
+    this.id = this.weighing.id
   }
 
 }

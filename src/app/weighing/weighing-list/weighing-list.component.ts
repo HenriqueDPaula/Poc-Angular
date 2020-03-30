@@ -1,8 +1,8 @@
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { WeighingService } from './../../../service/weighing.service';
-import { Component, OnInit } from '@angular/core';
-import { WeighingModel } from './../../../model/weighing.model';
+import { WeighingService } from '../service/weighing.service';
+import { WeighingModel } from '../model/weighing.model';
 
 @Component({
   selector: 'app-weighing-list',
